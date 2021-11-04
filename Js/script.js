@@ -19,10 +19,12 @@ if (Livelli == 1) {
 
 if (Livelli == 2) {
     difficolta = 81;
+
 }
 
 if (Livelli == 3) {
     difficolta = 49;
+
 }
 
 for (let i = 1; i <= difficolta; i++){
@@ -40,13 +42,36 @@ for (let i = 1; i <= difficolta; i++){
 }
 
 //Creo un array di 16 numeri casuali che non si ripetono
-
- const arrNum = [];
- for(let i=0; i<16; i++){ 
-    let num = (Math.floor(Math.random()*100)+1);
-    if (arrNum[i] !== num){
-    arrNum.push(num)
+const arrNum = [];
+while(arrNum.length < 16) { 
+    let num = (Math.floor(Math.random()*difficolta)+1);
+    if (arrNum.includes(num) === false){
+        arrNum.push(num)
     }
     console.log(arrNum)
  }
+
+
+function inizio(livello, classe) {
+    for ( let i = 1; i <= livello; i++) {
+
+        let nuoveCelle = creareCelle("div", classe);
+        nuoveCelle.id = i;
+        contenitoreCelle.append(nuoveCelle);
+
+        nuoveCelle.addEventListener("click",
+            function(){
+                nuoveCelle.classList.add("cliccato");
+                nuoveCelle.innerText = i;
+                const id = parseInt(nuoveCelle.id);
+                console.log('hai clickato su id ', id);
+
+                if(bombe.includes(id)) {
+                    nuoveCelle.classList.add("bomba");
+                    alert ("Hai perso");
+                }
+            }   
+        )
+    }
+}
 
