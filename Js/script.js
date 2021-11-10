@@ -2,11 +2,6 @@ const gridCont = document.getElementById("grid");
 const levl = parseInt(prompt("livello?"));
 var points = 0;
 
-// const generaElemento = (elementGen, classPlus) => {
-//     let node = document.createElement(elementGen);
-//     node.classList.add(classPlus);
-//     return node
-// }
 
 // genero l'array bombe
 const bombList = bombGen(16, 1, levl);
@@ -36,18 +31,10 @@ for(let i = 1; i <= 64; i++){
             // sennò aggiungo punto
         }
 
-
-        // () => {
-        //     // newElem.classList.add("clicked-true");
-        //     console.log(this);
-        //     this.classList.add("clicked-true");
-        // }
     );
 
     gridCont.appendChild(newElem);
 }
-
-
 
 
 // funzioni utili
