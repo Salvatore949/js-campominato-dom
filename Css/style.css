@@ -1,19 +1,51 @@
-#containerSquare{
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    margin-top: 150px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #011627;
+}
+
+.container {
+    width: 500px;
+    margin: 60px auto;
+    border: 2px solid white;
 }
 
 .square {
-    border: 1px solid black;
-    width: 65px;
-    height: 65px;
-    color:white;
+    float: left;
+    width: calc(100% / 8);
+    height: calc(100% / 8);
+    border: 2px solid white;
+    cursor: pointer;
 }
 
-.clicked_true{
-    background-color: blueviolet;
+.square span {
+    display: none;
+}
+
+.square span.green{
+    color: green;
+}
+.square span.red{
+    color: red;
+}
+
+
+.square-container {
+    height: 500px;
+}
+
+.square.clicked-true {
+    background: #fff;
+}
+
+.square.clicked-true.boom {
+    background: #e71d36;
+}
+
+.square.clicked-true span {
+    display: block;
 }
